@@ -1,0 +1,66 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#pragma pack(1)
+
+
+struct student{
+        char name;
+        int ID ;
+        int day , month ,year;
+        int score;
+        int num ;
+    };
+    
+int main()
+{  printf("Welcome to our program!\n");
+char p,c; int n; int i=1;
+label0:
+   printf ("which way do you want to use this program?\n");
+   printf( "\npress A to use it by dynamic arrays.\n");
+   printf("Press L to use it by Linkedlists.\n");
+    //scanf("s", &p);
+    //  if ((strcmp("A", p))==0) {goto label1;}
+    //else if  ((strcmp("L", c)==0)) {goto label2;}
+      //else {
+          //printf("Bad input :( ... would you like to try again?\n      yes/no\n ");
+              //  label1: scanf("%s", c);
+            //   if ((strcmp("yes", c))==0) {goto label0;}
+                //else if  ((strcmp("no", c)==0)) {exit(0);}
+                
+  printf(" Enter the number of students: \n");
+    scanf("%d",&n);
+    struct student student[n];
+    
+    printf("Enter the students' informations \n");
+    for ( i=1; i<=n; i++)
+    { student[i].num =i;
+     printf("student num[%d]\n" ,student[i].num);
+     
+        printf( "Enter Name: \n");fflush(stdin);
+        scanf(" %[^\n]s ", &student[i].name);
+        
+        printf("Enter ID:\n");
+        scanf("%d", &student[i].ID);
+           
+         printf("Birth date\n");
+         printf("Enter day:\n"); scanf("%d" ,&student[i].day);
+         printf("Enter month:\n"); scanf("%d" ,&student[i].month);
+         printf("Enter year:\n"); scanf("%d" ,&student[i].year);
+         printf("Then Birth date is:%d/%d/%d\n" ,student[i].day,student[i].month,student[i].year);
+         
+         printf("Enter score:\n");
+        scanf("%d",&student[i].score);
+    }
+    printf("Checking the information of students \n");
+    
+    printf("Enter the number of student\n");
+    scanf("%d",&i); printf("i=%d\n",i);
+   
+   printf(" student name: "); puts(student[i].name);
+    printf("student id: %d\n",student[i].ID);
+    printf("student score: %d\n",student[i].score);
+    printf( "student birthday:%d/%d/%d",student[i].day,student[i].month,student[i].year);
+
+    return 0;
+}
